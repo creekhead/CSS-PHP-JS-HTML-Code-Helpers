@@ -1,0 +1,114 @@
+
+// Device = Desktops
+// Screen = 1281px to higher resolution desktops
+// 1281px to LARGER
+@media (min-width: 1281px) {
+
+}
+
+
+// Device = Laptops, Desktops
+// Screen = B/w 1025px to 1280px
+// 1025px to 1280px
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+}
+
+
+// Device = Tablets, Ipads  
+// Screen = B/w 768px to 1024px
+// 768px to 1024px
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+
+// Device = Low Resolution Tablets, Mobiles (Landscape)
+// Screen = B/w 481px to 767px
+// 481PX to 767PX
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+
+
+// Device = Most of the Smartphones Mobiles (Portrait)
+// Screen = B/w 320px to 479px
+// 320PX to 479PX
+@media (min-width: 320px) and (max-width: 480px) {
+  
+}
+
+/***********************************************************
+*                     SIMPLER QUERIES                      *
+***********************************************************/
+
+// 426PX OR LARGER
+@media (min-width: 426px) {
+   
+} 
+
+
+// 425PX OR SMALLER
+@media (max-width: 425px) {
+
+}
+
+//1200px or SMALLER Catches IPAD
+@media (max-width:1200px) {
+     
+}
+
+
+//991PX or SMALLER
+@media (max-width:991px) {
+
+}
+
+
+//991PX or LARGER
+@media (min-width:991px) {
+  
+}
+
+
+//768PX OR LARGER
+@media (min-width:768px) {
+ 
+}
+
+
+//760PX or SMALLER
+@media (max-width:768px) {
+   
+}
+
+
+//550px or SMALLER
+@media (max-width:550px) {
+  
+}
+
+
+//426PX OR LARGER
+@media (min-width: 426px) {
+  
+}
+
+
+//425PX OR SMALLER
+@media (max-width: 425px) {
+   
+}
+
+
+//360PX or SMALLER
+@media (max-width:360px) {
+    
+}
+
+
+//300PX OR SMALLER
+@media (max-width: 300px) {
+     
+}
+
