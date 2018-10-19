@@ -14,7 +14,7 @@ alias bashme='source ~/.bashrc'
 alias treeme="tree -a "
 alias grep='grep -i --color=auto'
 alias ping='ping -c 5'
-alias rc='sudo nano ~/.bashrc_aliases'
+alias ebash='sudo nano ~/.bashrc_aliases'
 alias ver="cat /etc/*-release;echo;echo '-->lsb_release -a';lsb_release -a;echo;echo '-->uname -a';uname -a"
 
 #TMUX
