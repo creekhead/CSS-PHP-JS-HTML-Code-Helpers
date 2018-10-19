@@ -1,0 +1,110 @@
+#ALIAS 10/18/2018
+use_color=true
+
+alias l='ls -lh'
+alias ll='ls -lrt'
+alias lll='ls -lhtRr'
+alias lsd='ls -dla */'
+alias lx='function __tempalias() { ls -lt | head -n $*; unset -f __tempalias; }; __tempalias';
+alias lsname='function __tempalias() { ls *$** -haltr; unset -f __tempalias; }; __tempalias'
+alias cls='clear'
+alias h='history 100'
+alias hh='history | grep'
+alias bashme='source ~/.bashrc'
+alias treeme="tree -a "
+alias grep='grep -i --color=auto'
+alias ping='ping -c 5'
+alias rc='sudo nano ~/.bashrc_aliases'
+alias ver="cat /etc/*-release;echo;echo '-->lsb_release -a';lsb_release -a;echo;echo '-->uname -a';uname -a"
+
+#TMUX
+alias t='tmux'
+alias tls='tmux ls'
+alias tsnew='tmux new -s '
+alias ts2='tmux attach-session -t stats2'
+alias ts4='tmux attach-session -t status'
+alias s='screen'
+
+#SEARCH
+alias f='find . -name '
+alias fa='find / -name '
+alias findall="ag "
+
+#UPDATE/INSTALLERS
+alias apts='apt-cache search '
+alias apti='apt-get install '
+#alias update='apt-get clean && apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y'
+alias update='sudo apt-get update; sudo apt-get upgrade'
+
+#MISC
+alias serve='python -m SimpleHTTPServer 8000'
+
+#APACHE HELPERS
+alias ar="sudo service apache2 restart"
+alias as="sudo service apache2 status"
+alias atop="sudo apachetop -f /var/log/apache2/access/tmp_access.log"
+
+#DRIVE/UTILITIES
+alias largest='du -hsx * | sort -rh | head -10'
+alias df='df -H'
+alias du='du -ch'
+alias du='du -ch'
+alias usage='du -ch | grep total'
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias count='function __tempalias() { ls $* | wc -l; unset -f __tempalias; }; __tempalias'
+alias testssl='function __tempalias() { curl --insecure -v https://$* 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }"; unset -f __tempalias; }; __tempalias'
+
+
+#REMINDERS/LOGS
+alias remindme='cat ~/.bashrc_aliases'
+alias log1='tail -n200 -f /var/log/apache2/error_all.log'
+alias log2='tail -n200 -f /var/www/tmppro.com/application/logs/log-2017-07.php'
+alias log3='systemctl status'
+alias log4='journalctl -xn'
+
+#NET
+alias connections='sudo lsof -n -P -i +c 15'
+alias ss1='ss -4'
+alias ss2='ss state listening'
+alias ss3='ss state established'
+alias ss4='ss state syn-sent'
+alias ss_ssh='ss -o state established "( dport = :ssh or sport = :ssh )"'
+
+alias ns='netstat -ntu | awk '\''{print $5}'\'' | cut -d: -f1 | sort | uniq -c | sort -n'
+alias ns1='netstat -tulpn'
+alias ns2='watch -n 30 '\''netstat -ntu | awk '\''{print \$5}'\'' | cut -d: -f1 | sort | uniq -c | sort -n'\'''
+alias ns3='lsof -i'
+alias ns4='watch -d -n1 '\''netstat -anp | grep -i STREM'\'''
+alias ns_ssh='sudo netstat -tanp | grep \:21'
+
+#MISC FILESYSTEM HELPERS
+alias getchmod="stat --format '%a'"
+alias largefiles="sudo du -ahx / | sort -rh | head -20"
+alias largefilesdetails="sudo find / -xdev -type f -size +100M -exec du -sh {} ';' | sort -rh | head -n50"
+alias delall="perl -e 'for(<*>){((stat)[9]<(unlink))}'"
+
+#FUN
+alias zombie='ps aux | grep "Z"'
+alias w='curl -4 http://wttr.in/06111'
+
+#TMP ONLY
+alias syncbashrc='sudo scp -P 22 /home/tmplinux/.bashrc_aliases tmplinux@10.0.100.115:/home/tmplinux/.bashrc_aliases'
+
+#TEST SCRIUPTS CREATE/DELETE all files
+alias rename_extension="for x in *.JPG; do sudo mv "$x" "${x%.JPG}.jpg"; done"
+alias createjunk='time for ((i = 1; i < 1000; i++)) ; do touch $i.foo ; done'
+junkfiles(){ echo "Purging directory: "$@; find $@ -type f -exec ionice -c3 rm {} \; ;}
+#perl -e 'for(<*>){((stat)[9]<(unlink))}'
+#TMP Permission Change
+alias perm_change='folder="parts_diagrams";sudo chown -R tmplinux ${folder}; sudo chgrp -R www-data ${folder}; sudo chmod -R 750 ${folder}; sudo chmod g+s ${folder} -R; sudo chmod g+w ${folder} -R'
+
+#TEST MAIL FROM COMMAND LINE
+pk() { mail -s "$1" pk@musicpeopleinc.com << END_TEXT
+$2
+END_TEXT
+}
+
+#PKROUTE
+#alias t='tmux attach-session -t sonar'
+#alias ts2='tmux attach-session -t stats2'
+#alias tsnew='tmux new -s sonar'
