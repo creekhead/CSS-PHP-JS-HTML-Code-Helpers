@@ -2,7 +2,7 @@
 use_color=true
 
 alias l='ls -lahtrX --group-directories'
-alias ll='ls -lahtX --group-directories'
+alias ll='ls -lahtrX --group-directories | grep '
 alias lll='ls -lhtRr'
 alias lsd='ls -dla */'
 alias lx='function __tempalias() { ls -lt | head -n $*; unset -f __tempalias; }; __tempalias';
