@@ -1,4 +1,4 @@
-#ALIAS 10/18/2018
+#ALIAS 10/21/2018
 use_color=true
 
 alias l='ls -lh'
@@ -10,20 +10,21 @@ alias lsname='function __tempalias() { ls *$** -haltr; unset -f __tempalias; }; 
 alias cls='clear'
 alias h='history 100'
 alias hh='history | grep'
+alias hhh='history'
 alias bashme='source ~/.bashrc'
 alias treeme="tree -a "
 alias grep='grep -i --color=auto'
 alias ping='ping -c 5'
-alias ebash='sudo nano ~/.bashrc_aliases'
+alias erc='sudo nano ~/.bashrc_aliases'
 alias ver="cat /etc/*-release;echo;echo '-->lsb_release -a';lsb_release -a;echo;echo '-->uname -a';uname -a"
 
 #TMUX
 alias t='tmux'
 alias tls='tmux ls'
-alias tsnew='tmux new -s '
-alias ts2='tmux attach-session -t stats2'
+alias tsnew='tmux new -s sonar'
+alias tss='tmux attach-session -t sonar'
+alias ts4new='tmux new -s status'
 alias ts4='tmux attach-session -t status'
-alias s='screen'
 
 #SEARCH
 alias f='find . -name '
@@ -88,14 +89,15 @@ alias zombie='ps aux | grep "Z"'
 alias w='curl -4 http://wttr.in/06111'
 
 #TMP ONLY
-alias syncbashrc='sudo scp -P 22 /home/tmplinux/.bashrc_aliases tmplinux@10.0.100.115:/home/tmplinux/.bashrc_aliases'
+alias syncbashrc='sudo scp -P 22 /home/tmplinux/.bashrc_aliases USERNAME@10.1.10.1:/home/tmplinux/.bashrc_aliases'
 
 #TEST SCRIUPTS CREATE/DELETE all files
 alias rename_extension="for x in *.JPG; do sudo mv "$x" "${x%.JPG}.jpg"; done"
 alias createjunk='time for ((i = 1; i < 1000; i++)) ; do touch $i.foo ; done'
 junkfiles(){ echo "Purging directory: "$@; find $@ -type f -exec ionice -c3 rm {} \; ;}
 #perl -e 'for(<*>){((stat)[9]<(unlink))}'
-#TMP Permission Change
+
+#Permission Change
 alias perm_change='folder="parts_diagrams";sudo chown -R tmplinux ${folder}; sudo chgrp -R www-data ${folder}; sudo chmod -R 750 ${folder}; sudo chmod g+s ${folder} -R; sudo chmod g+w ${folder} -R'
 
 #TEST MAIL FROM COMMAND LINE
@@ -104,7 +106,8 @@ $2
 END_TEXT
 }
 
-#PKROUTE
-#alias t='tmux attach-session -t sonar'
-#alias ts2='tmux attach-session -t stats2'
-#alias tsnew='tmux new -s sonar'
+#SSH SHORTCUTS
+alias ssh1='ssh pk@10.1.10.1'
+alias ssh2='ssh pk@10.1.10.40'
+alias ssh3='ssh pk@10.1.10.92'
+alias ssh4='ssh pk@10.1.10.30'
