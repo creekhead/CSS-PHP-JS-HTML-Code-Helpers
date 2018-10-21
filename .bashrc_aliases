@@ -58,6 +58,8 @@ alias testssl='function __tempalias() { curl --insecure -v https://$* 2>&1 | awk
 
 #REMINDERS/LOGS
 alias remindme='cat ~/.bashrc_aliases'
+alias r='less ~/.bashrc_aliases'
+alias rr='cat ~/.bashrc_aliases | grep '
 alias log1='tail -n200 -f /var/log/apache2/error_all.log'
 alias log2='tail -n200 -f /var/www/tmppro.com/application/logs/log-2017-07.php'
 alias log3='systemctl status'
