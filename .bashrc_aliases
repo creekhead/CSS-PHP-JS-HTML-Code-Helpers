@@ -54,7 +54,7 @@ alias usage='du -ch | grep total'
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias count='function __tempalias() { ls $* | wc -l; unset -f __tempalias; }; __tempalias'
 alias testssl='function __tempalias() { curl --insecure -v https://$* 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }"; unset -f __tempalias; }; __tempalias'
-alias myip='curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //\' -e \'s/<.*$//\''
+alias myip='curl ipinfo.io/ip'
 
 #REMINDERS/LOGS
 alias remindme='cat ~/.bashrc_aliases'
