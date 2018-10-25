@@ -82,7 +82,7 @@ alias usage='du -ch | grep total'
 alias largest='du -hsx * | sort -rh | head -10'
 alias largefiles="sudo du -ahx / | sort -rh | head -20"
 alias largefilesdetails="sudo find / -xdev -type f -size +100M -exec du -sh {} ';' | sort -rh | head -n50"
-alias largedir='function __tempalias() { du -a $* | sort -n -r. | head -n 20; unset -f __tempalias; }; __tempalias'
+alias largedir='function __tempalias() { du -a $* | sort -n -r | head -n 25; unset -f __tempalias; }; __tempalias'
 alias getchmod="stat --format '%a'"
 alias delall="perl -e 'for(<*>){((stat)[9]<(unlink))}'"
 
