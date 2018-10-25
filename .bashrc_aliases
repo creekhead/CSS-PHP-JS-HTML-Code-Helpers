@@ -70,12 +70,14 @@ alias ss_ssh='ss -o state established "( dport = :ssh or sport = :ssh )"'
 
 alias ns='netstat -ntu | awk '\''{print $5}'\'' | cut -d: -f1 | sort | uniq -c | sort -n'
 alias ns1='netstat -tulpn'
-alias ns2='watch -n 30 '\''netstat -ntu | awk '\''{print \$5}'\'' | cut -d: -f1 | sort | uniq -c | sort -n'\'''
+alias ns2='watch -n 5 "netstat -ntu | awk \"{print $5}\" | cut -d: -f1 | sort | uniq -c | sort -n"'
 alias ns3='lsof -i'
-alias ns4='watch -d -n1 '\''netstat -anp | grep -i STREM'\'''
+alias ns4="watch -d -n1 'netstat -anp | grep -i STRE'"
+alias tcp_drop='nstat -az TcpExtListenDrops'
 alias ns_ssh='sudo netstat -tanp | grep \:21'
 
-#MISC FILESYSTEM HELPERSalias df='df -H'
+#MISC FILESYSTEM HELPERS
+alias df='df -H'
 alias du='du -ch'
 alias du='du -ch'
 alias usage='du -ch | grep total'
@@ -114,3 +116,4 @@ alias ssh1='ssh pk@10.1.10.1'
 alias ssh2='ssh pk@10.1.10.40'
 alias ssh3='ssh pk@10.1.10.92'
 alias ssh4='ssh pk@10.1.10.30'
+alias ssh5='ssh pk@10.1.10.104'
