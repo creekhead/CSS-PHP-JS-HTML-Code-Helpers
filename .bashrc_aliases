@@ -45,12 +45,7 @@ alias ar="sudo service apache2 restart"
 alias as="sudo service apache2 status"
 alias atop="sudo apachetop -f /var/log/apache2/access/tmp_access.log"
 
-#DRIVE/UTILITIES
-alias largest='du -hsx * | sort -rh | head -10'
-alias df='df -H'
-alias du='du -ch'
-alias du='du -ch'
-alias usage='du -ch | grep total'
+#UTILITIES
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias count='function __tempalias() { ls $* | wc -l; unset -f __tempalias; }; __tempalias'
 alias testssl='function __tempalias() { curl --insecure -v https://$* 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }"; unset -f __tempalias; }; __tempalias'
@@ -80,10 +75,15 @@ alias ns3='lsof -i'
 alias ns4='watch -d -n1 '\''netstat -anp | grep -i STREM'\'''
 alias ns_ssh='sudo netstat -tanp | grep \:21'
 
-#MISC FILESYSTEM HELPERS
-alias getchmod="stat --format '%a'"
+#MISC FILESYSTEM HELPERSalias df='df -H'
+alias du='du -ch'
+alias du='du -ch'
+alias usage='du -ch | grep total'
+alias largest='du -hsx * | sort -rh | head -10'
 alias largefiles="sudo du -ahx / | sort -rh | head -20"
 alias largefilesdetails="sudo find / -xdev -type f -size +100M -exec du -sh {} ';' | sort -rh | head -n50"
+alias largedir='function __tempalias() { du -a $* | sort -n -r. | head -n 20; unset -f __tempalias; }; __tempalias'
+alias getchmod="stat --format '%a'"
 alias delall="perl -e 'for(<*>){((stat)[9]<(unlink))}'"
 
 #FUN
