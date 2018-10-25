@@ -93,9 +93,6 @@ alias delall="perl -e 'for(<*>){((stat)[9]<(unlink))}'"
 #FUN
 alias zombie='ps aux | grep "Z"'
 alias w='curl -4 http://wttr.in/06111'
-
-#TMP ONLY
-alias syncbashrc='sudo scp -P 22 /home/tmplinux/.bashrc_aliases USERNAME@10.1.10.1:/home/tmplinux/.bashrc_aliases'
 alias syncrc='rm .bashrc_aliases.bak -f; mv .bashrc_aliases .bashrc_aliases.bak;wget http://raw.githubusercontent.com/creekhead/CSS-PHP-JS-HTML-Code-Helpers/master/.bashrc_aliases --no-check-certificate'
 
 #TEST SCRIUPTS CREATE/DELETE all files
