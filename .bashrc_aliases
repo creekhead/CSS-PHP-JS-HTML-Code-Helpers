@@ -50,6 +50,7 @@ alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 alias count='function __tempalias() { ls $* | wc -l; unset -f __tempalias; }; __tempalias'
 alias testssl='function __tempalias() { curl --insecure -v https://$* 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }"; unset -f __tempalias; }; __tempalias'
 alias myip='curl ipinfo.io/ip'
+alias getip='curl http://ipecho.net/plain; echo'
 
 #REMINDERS/LOGS
 alias remindme='cat ~/.bashrc_aliases'
@@ -75,7 +76,7 @@ alias ns3='lsof -i'
 alias ns4="watch -d -n1 'netstat -anp | grep -i STRE'"
 alias tcp_drop='nstat -az TcpExtListenDrops'
 alias ns_ssh='sudo netstat -tanp | grep \:21'
-alias lnet='sudo nmap -sU --script nbstat.nse -p137 10.1.10.*;arp -a'
+alias findAll='sudo nmap -sU --script nbstat.nse -p137 10.1.10.*;arp -a'
 
 #MISC FILESYSTEM HELPERS
 alias df='df -H'
