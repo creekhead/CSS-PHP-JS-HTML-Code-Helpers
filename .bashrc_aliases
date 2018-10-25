@@ -75,6 +75,7 @@ alias ns3='lsof -i'
 alias ns4="watch -d -n1 'netstat -anp | grep -i STRE'"
 alias tcp_drop='nstat -az TcpExtListenDrops'
 alias ns_ssh='sudo netstat -tanp | grep \:21'
+alias lnet='sudo nmap -sU --script nbstat.nse -p137 10.1.10.*;arp -a'
 
 #MISC FILESYSTEM HELPERS
 alias df='df -H'
