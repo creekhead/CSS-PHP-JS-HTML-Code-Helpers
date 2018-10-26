@@ -17,6 +17,7 @@ alias grep='grep -i --color=auto'
 alias ping='ping -c 5'
 alias erc='sudo nano ~/.bashrc_aliases'
 alias ver="cat /etc/*-release;echo;echo '-->lsb_release -a';lsb_release -a;echo;echo '-->uname -a';uname -a;echo;inxi;echo;inxi -F"
+alias ag='ag -i'
 
 #TMUX
 alias t='tmux'
