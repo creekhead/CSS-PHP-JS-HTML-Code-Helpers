@@ -112,7 +112,7 @@ END_TEXT
 
 #SSH SHORTCUTS
 alias ssh1='ssh pk@10.1.10.1'
-alias ssh2='ssh pk@10.1.10.40'
-alias ssh3='ssh pk@10.1.10.92'
-alias ssh4='ssh pk@10.1.10.30'
-alias ssh5='ssh pk@10.1.10.104'
+alias ssh40='ssh pk@10.1.10.40'
+alias ssh92='ssh pk@10.1.10.92'
+alias ssh30='ssh pk@10.1.10.30'
+alias ssh104='ssh pk@10.1.10.104'
