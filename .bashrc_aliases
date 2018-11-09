@@ -20,6 +20,7 @@ alias ver="cat /etc/*-release;echo;echo '-->lsb_release -a';lsb_release -a;echo;
 alias ag='ag -i'
 alias p='ps aux'
 alias pp='ps aux | grep'
+alias reboot='sudo shutdown -r now'
 
 #TMUX
 alias t='tmux'
