@@ -120,7 +120,7 @@ alias pig='sudo service pigpiod start'
 #SSH SHORTCUTS
 alias ss='sudo service '
 alias ssh1='ssh pk@10.1.10.1'
-alias ssh51='ssh pk@10.1.10.51'
+alias ssh51='ssh pi@10.1.10.51'
 alias ssh92='ssh pk@10.1.10.92'
 alias ssh30='ssh pk@10.1.10.30'
 alias ssh104='ssh pk@10.1.10.104'
