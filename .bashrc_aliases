@@ -86,7 +86,7 @@ alias findAll='sudo nmap -sU --script nbstat.nse -p137 10.1.10.*;arp -a'
 #MISC FILESYSTEM HELPERS
 alias df='df -H'
 alias du='du -ch'
-alias du='du -ch'
+alias dirsize='du -sh '
 alias usage='du -ch | grep total'
 alias largest='du -hsx * | sort -rh | head -10'
 alias largefiles="sudo du -ahx / | sort -rh | head -20"
