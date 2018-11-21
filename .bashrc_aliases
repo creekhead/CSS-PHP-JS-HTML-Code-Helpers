@@ -1,5 +1,6 @@
 #ALIAS 10/21/2018
 use_color=true
+stty -ixon      #ENABLE CTRL+S
 
 alias l='ls -lahtr --group-directories'
 alias ll='ls -lahtr --group-directories | grep '
@@ -127,5 +128,4 @@ alias ssh92='ssh pk@10.1.10.92'
 alias ssh30='ssh pk@10.1.10.30'
 
 
-#ENABLE CTRL+S
-stty -ixon
+
