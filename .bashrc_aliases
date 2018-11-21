@@ -39,7 +39,7 @@ alias findall="ag "
 #UPDATE/INSTALLERS
 alias apts='apt-cache search '
 alias apti='apt-get install '
-#alias update='apt-get clean && apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y'
+#alias update='sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
 alias update='sudo apt-get update; sudo apt-get upgrade'
 
 #MISC
