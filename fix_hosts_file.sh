@@ -23,17 +23,10 @@ cat $1 | while read line
 do
    wcount=$(echo $line | tr ' ' '\n' | wc -l)
    initial="$(echo $line | head -c 1)"
-   if [ "$initial" = "#" ]; then
-      new=$line
-   else
-      if [ "$wcount" -eq 1 ]; then
-       new="0.0.0.0 $line"
-      elif [ "$wcount" -eq 2 ]; then
-       new=$line
-      else
-       new=$line
-      fi
+   new=$line
+   if [[ ( "$initial" != "#") && ( "$wcount" -eq 1 ) ]]; then
+      new="0.0.0.0 $line"
    fi
-   
+ 
    echo $new >> $2
 done
