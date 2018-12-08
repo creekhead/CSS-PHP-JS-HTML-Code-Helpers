@@ -35,13 +35,12 @@ alias ts4='tmux attach-session -t status'
 #SEARCH
 alias f='find . -name '
 alias fa='find / -name '
-alias findall="ag "
+alias findall="find / -name "
 
 #UPDATE/INSTALLERS
 alias apts='apt-cache search '
 alias apti='apt-get install '
 #alias update='sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
-alias update='sudo apt-get update; sudo apt-get upgrade'
 
 #MISC
 alias serve='python -m SimpleHTTPServer 8000'
