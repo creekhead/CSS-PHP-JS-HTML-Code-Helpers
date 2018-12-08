@@ -124,6 +124,7 @@ alias pig='sudo service pigpiod start'
 alias ss='sudo service '
 alias sshh='function __tempalias() { if [ -z "$2" ]; then ssh pk@10.1.10.$1;else ssh $1@10.1.10.$2;fi;unset -f __tempalias; }; __tempalias'
 alias ssh1='ssh pk@10.1.10.1'
+alias ssh40='ssh pk@10.1.10.40'
 alias ssh50='ssh pi@10.1.10.50'
 alias ssh51='ssh pi@10.1.10.51'
 
