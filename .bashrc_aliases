@@ -100,7 +100,7 @@ alias delall="perl -e 'for(<*>){((stat)[9]<(unlink))}'"
 #FUN
 alias zombie='ps aux | grep "Z"'
 alias w='curl -4 http://wttr.in/06111'
-alias syncrc='rm .bashrc_aliases.bak -f; mv .bashrc_aliases .bashrc_aliases.bak;wget http://raw.githubusercontent.com/creekhead/CSS-PHP-JS-HTML-Code-Helpers/master/.bashrc_aliases --no-check-certificate; rm .bashrc_functions.bak -f; mv .bashrc_functions .bashrc_functions.bak;wget https://github.com/creekhead/CSS-PHP-JS-HTML-Code-Helpers/blob/master/.bashrc_functions --no-check-certificate'
+alias syncrc='rm .bashrc_aliases.bak -f; mv .bashrc_aliases .bashrc_aliases.bak;wget http://raw.githubusercontent.com/creekhead/CSS-PHP-JS-HTML-Code-Helpers/master/.bashrc_aliases --no-check-certificate; rm .bashrc_functions.bak -f; mv .bashrc_functions .bashrc_functions.bak;wget http://raw.githubusercontent.com/creekhead/CSS-PHP-JS-HTML-Code-Helpers/master/.bashrc_functions --no-check-certificate'
 
 #TEST SCRIUPTS CREATE/DELETE all files
 alias rename_extension="for x in *.JPG; do sudo mv "$x" "${x%.JPG}.jpg"; done"
