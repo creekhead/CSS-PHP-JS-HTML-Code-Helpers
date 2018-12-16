@@ -44,6 +44,7 @@ alias apti='apt-get install '
 
 #MISC
 alias serve='python -m SimpleHTTPServer 8000'
+alias sudo='sudo '
 
 #APACHE HELPERS
 alias ar="sudo service apache2 restart"
