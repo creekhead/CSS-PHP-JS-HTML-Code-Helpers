@@ -1,0 +1,22 @@
+#GREP REMINDERS
+#grep -C 3 \|  -v   SHOW X LINES AROUND MATCH - MULTIPLE MATCHES - REVERSE
+#
+
+highlight() {   grep --color -E "$1|\$"; }
+
+alias sm='function __tempalias() {
+line=$@;
+action=$(echo $line | awk '"'"'{print $NF}'"'"');
+services=$(echo $line | awk '"'"'{$NF="";sub(/[ \t]+$/,"")}1'"'"');
+echo -e "All services to toggle: $services\r\n Action: $action\r\n";
+eval "arr=($services)"; for s in "${arr[@]}"; do
+echo "Service: $s" | highlight $s;
+comm=$(echo "service $s $action");
+echo -e "Command: $comm\r\n\---------\r\n";
+eval $comm;
+echo -e "---------\r\n";
+done;
+unset -f __tempalias;
+}; __tempalias'
+
+alias cs='sm smbd sshd apache2 mysqld status';
