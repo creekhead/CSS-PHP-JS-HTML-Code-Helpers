@@ -128,6 +128,6 @@ alias ssh40='ssh pk@10.1.10.40'
 alias ssh50='ssh pi@10.1.10.50'
 alias ssh51='ssh pi@10.1.10.51'
 
-#GREP REMINDERS
-#grep -C 3 \|  -v   SHOW X LINES AROUND MATCH - MULTIPLE MATCHES - REVERSE
-
+if [ -f ~/.bashrc_functions ]; then
+    . ~/.bashrc_functions
+fi
