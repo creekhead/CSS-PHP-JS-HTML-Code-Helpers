@@ -132,3 +132,7 @@ alias ssh51='ssh pi@10.1.10.51'
 if [ -f ~/.bashrc_functions ]; then
     . ~/.bashrc_functions
 fi
+
+if [ -f ~/.bashrc_enlightment ]; then
+    . ~/.bashrc_enlightment
+fi
