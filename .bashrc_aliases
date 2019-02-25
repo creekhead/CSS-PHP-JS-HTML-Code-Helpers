@@ -23,6 +23,7 @@ alias p='ps aux'
 alias pp='ps aux | grep'
 alias reboot='sudo shutdown -r now'
 alias d='diff --side-by-side --suppress-common-lines'
+#alias php=/usr/bin/php7.0
 
 #TMUX
 alias t='tmux'
@@ -35,24 +36,36 @@ alias ts4='tmux attach-session -t status'
 #SEARCH
 alias f='find . -name '
 alias fa='find / -name '
-alias findall="find / -name "
+alias findall="ag "
 
 #UPDATE/INSTALLERS
 alias apts='apt-cache search '
 alias apti='apt-get install '
 alias restart='env DISPLAY=:0 enlightenment_remote -restart'
-alias update='sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
+#alias update='sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
 
 #MISC
 alias serve='python -m SimpleHTTPServer 8000'
-alias sudo='sudo '
 
 #APACHE HELPERS
 alias ar="sudo service apache2 restart"
 alias as="sudo service apache2 status"
 alias atop="sudo apachetop -f /var/log/apache2/access/tmp_access.log"
 
-#UTILITIES
+#DRIVE/UTILITIES - MISC FILESYSTEM HELPERS
+alias getchmod="stat --format '%a'"
+alias df='df -H'
+alias du='du -ch'
+alias usage='du -ch | grep total'
+#SPACE
+alias dirsize='du -sh '
+alias largest='du -hsx * | sort -rh | head -10'
+alias largefiles="sudo du -ahx / | sort -rh | head -20"
+alias largefilesdetails="sudo find / -xdev -type f -size +100M -exec du -sh {} ';' | sort -rh | head -n50"
+alias largedir='function __tempalias() { du -a $* | sort -n -r | head -n 25; unset -f __tempalias; }; __tempalias'
+alias dirsize='function __tempalias() { du -sh $* | sort -n -r | head -n 25; unset -f __tempalias; }; __tempalias'
+alias delall="perl -e 'for(<*>){((stat)[9]<(unlink))}'"
+
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias count='function __tempalias() { ls $* | wc -l; unset -f __tempalias; }; __tempalias'
 alias testssl='function __tempalias() { curl --insecure -v https://$* 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }"; unset -f __tempalias; }; __tempalias'
@@ -83,24 +96,14 @@ alias ns3='lsof -i'
 alias ns4="watch -d -n1 'netstat -anp | grep -i STRE'"
 alias tcp_drop='nstat -az TcpExtListenDrops'
 alias ns_ssh='sudo netstat -tanp | grep \:21'
-alias findAll='sudo nmap -sU --script nbstat.nse -p137 10.1.10.*;arp -a'
-
-#MISC FILESYSTEM HELPERS
-alias getchmod="stat --format '%a'"
-alias df='df -H'
-alias du='du -ch'
-alias dirsize='du -sh '
-alias usage='du -ch | grep total'
-alias largest='du -hsx * | sort -rh | head -10'
-alias largefiles="sudo du -ahx / | sort -rh | head -20"
-alias largefilesdetails="sudo find / -xdev -type f -size +100M -exec du -sh {} ';' | sort -rh | head -n50"
-alias largedir='function __tempalias() { du -a $* | sort -n -r | head -n 25; unset -f __tempalias; }; __tempalias'
-alias dirsize='function __tempalias() { du -sh $* | sort -n -r | head -n 25; unset -f __tempalias; }; __tempalias'
-alias delall="perl -e 'for(<*>){((stat)[9]<(unlink))}'"
+alias findAll='sudo nmap -sU --script nbstat.nse -p137 10.1.100.*;arp -a'
 
 #FUN
 alias zombie='ps aux | grep "Z"'
 alias w='curl -4 http://wttr.in/06111'
+
+#TMP ONLY
+alias syncbashrc='sudo scp -P 22 /home/tmplinux/.bashrc_aliases USERNAME@10.1.10.1:/home/tmplinux/.bashrc_aliases'
 alias syncrc='rm .bashrc_aliases.bak -f; mv .bashrc_aliases .bashrc_aliases.bak;wget http://raw.githubusercontent.com/creekhead/CSS-PHP-JS-HTML-Code-Helpers/master/.bashrc_aliases --no-check-certificate; rm .bashrc_functions.bak -f; mv .bashrc_functions .bashrc_functions.bak;wget http://raw.githubusercontent.com/creekhead/CSS-PHP-JS-HTML-Code-Helpers/master/.bashrc_functions --no-check-certificate'
 
 #TEST SCRIUPTS CREATE/DELETE all files
@@ -125,9 +128,9 @@ alias pig='sudo service pigpiod start'
 alias ss='sudo service '
 alias sshh='function __tempalias() { if [ -z "$2" ]; then ssh pk@10.1.10.$1;else ssh $1@10.1.10.$2;fi;unset -f __tempalias; }; __tempalias'
 alias ssh1='ssh pk@10.1.10.1'
-alias ssh40='ssh pk@10.1.10.40'
-alias ssh50='ssh pi@10.1.10.50'
-alias ssh51='ssh pi@10.1.10.51'
+alias ssh40='ssh pi@10.1.10.40'
+alias ssh51='ssh pi@10.1.10.50'	#WEATHERPI eth0
+alias ssh51='ssh pi@10.1.10.51'	#WEATHERPI wlan0
 
 #GREP REMINDERS
 #grep -C 3 \|  -v   SHOW X LINES AROUND MATCH - MULTIPLE MATCHES - REVERSE
